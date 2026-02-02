@@ -5044,3 +5044,160 @@ a {
 .contact-form-section .whatsapp-contact-form label i {
     color: #C52E20 !important;
 }
+
+
+
+
+
+/* ===== SECRET ADMIN TAP STYLES ===== */
+.secret-tap-counter {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--primary-fire);
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    border: 2px solid white;
+    box-shadow: 0 2px 8px rgba(197, 46, 32, 0.3);
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.secret-tap-counter.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.secret-tap-counter.pulse {
+    animation: secretPulse 0.5s ease;
+}
+
+@keyframes secretPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+}
+
+@keyframes secretSuccess {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.secret-success {
+    animation: secretSuccess 0.5s ease;
+}
+
+/* Password overlay */
+.password-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10002;
+}
+
+.password-overlay.active {
+    display: flex;
+}
+
+.password-modal {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: var(--shadow-xl);
+    animation: slideUp 0.3s ease;
+}
+
+.password-modal h3 {
+    color: var(--primary-fire);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.password-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.password-input:focus {
+    outline: none;
+    border-color: var(--primary-fire);
+    box-shadow: 0 0 0 3px rgba(197, 46, 32, 0.1);
+}
+
+.password-error {
+    color: #dc3545;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    display: none;
+}
+
+.password-error.show {
+    display: block;
+}
+
+.password-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-password {
+    flex: 1;
+    padding: 12px;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-cancel {
+    background: #f8f5f0;
+    border: 1px solid #ddd;
+    color: #666;
+}
+
+.btn-submit {
+    background: var(--primary-fire);
+    border: none;
+    color: white;
+}
+
+.btn-cancel:hover {
+    background: #eee;
+}
+
+.btn-submit:hover {
+    background: var(--primary-fire-dark);
+    transform: translateY(-2px);
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
