@@ -2,6 +2,7 @@
 // Fully compatible with your HTML and CSS
 // Includes professional premium builder with guided and quick modes
 // Includes complete authentication system
+// script code
 
 // ===== GLOBAL STATE =====
 const AppState = {
@@ -2920,3 +2921,4 @@ function initializeAll() {
     
     console.log('✅ Premium website fully loaded');
 }
+
